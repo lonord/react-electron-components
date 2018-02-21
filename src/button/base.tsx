@@ -1,12 +1,15 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import withBaseStyle from '../base/style'
-import { withFlexHorizental, withFlexItemsCenter } from '../layout/flex'
+import { withFlexItemsCenter, withInlineFlexHorizental } from '../layout/flex'
 
-const RawButton = withFlexItemsCenter(withFlexHorizental(withBaseStyle(styled.button``)))
+const BaseButton = withFlexItemsCenter(withInlineFlexHorizental(withBaseStyle(styled.button``)))
 
-const BaseButton = RawButton.extend`
-	padding: 2px 5px;
+const Button = BaseButton.extend`
+	padding: 5px;
+	background: white;
+	outline: none;
 	text-align: center;
+	cursor: pointer;
 `
-export default BaseButton
+export default Button

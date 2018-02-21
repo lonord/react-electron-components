@@ -35,6 +35,20 @@ export function withFlexHorizental<P>(Comp: React.ComponentType<P>) {
 	`
 }
 
+export function withInlineFlexVertical<P>(Comp: React.ComponentType<P>) {
+	return styled(Comp) `
+		display: inline-flex;
+		flex-direction: column;
+	`
+}
+
+export function withInlineFlexHorizental<P>(Comp: React.ComponentType<P>) {
+	return styled(Comp) `
+		display: inline-flex;
+		flex-direction: row;
+	`
+}
+
 export function withFlexItemsCenter<P>(Comp: React.ComponentType<P>) {
 	return styled(Comp) `
 		align-items: center;
