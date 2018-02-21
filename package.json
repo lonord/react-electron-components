@@ -1,0 +1,41 @@
+{
+  "name": "@lonord/react-electron-components",
+  "version": "1.0.0",
+  "description": "Base react components for electron platform",
+  "main": "lib/",
+  "types": "lib/",
+  "scripts": {
+    "build": "rimraf lib && tsc -d",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@lonord.name:/~/react-electron-components.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "electron"
+  ],
+  "author": "Loy B. <lonord@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react-fontawesome": "^1.6.2",
+    "react-fontawesome": "^1.6.1",
+    "styled-components": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.38",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.7.2",
+    "typescript-styled-plugin": "^0.6.0"
+  }
+}
