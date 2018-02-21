@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled, { StyledComponentClass } from 'styled-components'
-import withBaseStyle from '../base/style'
+import { withBaseStyle } from '../base/style'
 import { withFlexItemsCenter, withInlineFlexHorizental } from '../layout/flex'
 
 const BaseButton = withFlexItemsCenter(withInlineFlexHorizental(withBaseStyle(styled.button``)))

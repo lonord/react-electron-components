@@ -1,6 +1,18 @@
 import * as React from 'react'
 import styled, { injectGlobal } from 'styled-components'
-import { FlexHorizental, FlexItemAdaptive, FlexItemFix, FlexVertical, IconButton } from '../../../src'
+import {
+	Button,
+	FlexHorizental,
+	FlexItemAdaptive,
+	FlexItemFix,
+	FlexVertical,
+	IconButton,
+	MenuItem,
+	Modal,
+	Separate,
+	withBoxShadow,
+	withMenu
+} from '../../../src'
 
 injectGlobal`
 	* {
@@ -78,6 +90,21 @@ const IconButton2 = styled(IconButton1) `
 	background: pink;
 `
 
+const Modal1 = withBoxShadow(styled(Modal) `
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 300px;
+	background: cyan;
+	margin-top: 100px;
+`)
+
+const MenuButton = withMenu([
+	<MenuItem key="k1">hello</MenuItem>,
+	<Separate key="k2"/>,
+	<MenuItem key="k3">world</MenuItem>
+], Button)
+
 export default () => (
 	<div>
 		<Section>
@@ -99,5 +126,46 @@ export default () => (
 			<IconButton1 icon="user" />
 			<IconButton2 icon="user" />
 		</Section>
+		<Section>
+			<ModalExample/>
+		</Section>
+		<Section>
+			<MenuButton>Open menu</MenuButton>
+		</Section>
 	</div>
 )
+
+interface ModalExampleState {
+	isOpen: boolean
+}
+class ModalExample extends React.Component<any, ModalExampleState> {
+	state = {
+		isOpen: false
+	}
+
+	close = () => {
+		this.setState({
+			isOpen: false
+		})
+	}
+
+	open = () => {
+		this.setState({
+			isOpen: true
+		})
+	}
+
+	render() {
+		return [
+			<Button key="a" onClick={this.open}>Show modal</Button>,
+			<Modal1 key="b" isOpen={this.state.isOpen}>
+				<div>
+					Hello, I'm a modal
+				</div>
+				<div>
+					<Button onClick={this.close}>Close modal</Button>
+				</div>
+			</Modal1>
+		]
+	}
+}

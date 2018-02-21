@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Fa from 'react-fontawesome'
 import styled, { StyledComponentClass } from 'styled-components'
-import Button from './base'
+import Button from './button'
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	icon: string
