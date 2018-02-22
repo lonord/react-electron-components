@@ -1,6 +1,6 @@
 {
   "name": "@lonord/react-electron-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Base react components for electron platform",
   "main": "lib/",
   "types": "lib/",
@@ -29,7 +29,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "@lonord/electron-renderer-ts-compiler": "^1.1.2",
+    "@lonord/electron-renderer-ts-compiler": "^1.1.4",
     "@types/node": "^9.4.6",
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",

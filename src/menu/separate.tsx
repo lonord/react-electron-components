@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { StyledComponentClass } from 'styled-components'
 
 const Separate = styled.div`
 	height: 1px;

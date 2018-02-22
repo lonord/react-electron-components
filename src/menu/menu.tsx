@@ -3,7 +3,7 @@ import styled, { StyledComponentClass } from 'styled-components'
 import { withBoxShadow } from '../base/style'
 import Modal, { ModalProps } from '../layout/modal'
 
-interface MenuModalProps extends ModalProps {
+export interface MenuModalProps extends ModalProps {
 	top: number
 	left: number
 }
@@ -24,7 +24,7 @@ class Menu extends React.Component<MenuProps, any> {
 }
 export default Menu
 
-interface ClickableProps {
+export interface ClickableProps {
 	onClick?: (e: any) => void
 }
 interface MenuTriggerState {
@@ -32,7 +32,8 @@ interface MenuTriggerState {
 	top: number
 	left: number
 }
-export function withMenu<P extends ClickableProps>(menuItemsNode: React.ReactNode | React.ReactNode[],
+export type MenuTriggerClass<P> = React.ComponentClass<P>
+export function withMenu<P extends ClickableProps>(menuItemsNode: React.ReactNode,
 	Comp: React.ComponentClass<P>) {
 	class MenuTrigger extends React.Component<P, MenuTriggerState> {
 
@@ -75,7 +76,7 @@ export function withMenu<P extends ClickableProps>(menuItemsNode: React.ReactNod
 			]
 		}
 	}
-	return MenuTrigger
+	return MenuTrigger as MenuTriggerClass<P>
 }
 
 function calculateMenuPosition(trigger: HTMLElement, menu: HTMLElement) {

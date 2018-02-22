@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import {
 	Button,
+	Dialog,
 	FlexHorizental,
 	FlexItemAdaptive,
 	FlexItemFix,
@@ -132,6 +133,9 @@ export default () => (
 		<Section>
 			<MenuButton>Open menu</MenuButton>
 		</Section>
+		<Section>
+			<DialogExample/>
+		</Section>
 	</div>
 )
 
@@ -166,6 +170,68 @@ class ModalExample extends React.Component<any, ModalExampleState> {
 					<Button onClick={this.close}>Close modal</Button>
 				</div>
 			</Modal1>
+		]
+	}
+}
+
+interface DialogExampleState {
+	isOpen: boolean
+	isOpen2: boolean
+}
+class DialogExample extends React.Component<any, DialogExampleState> {
+
+	state = {
+		isOpen: false,
+		isOpen2: false
+	}
+
+	close = () => {
+		this.setState({
+			isOpen: false
+		})
+	}
+
+	close2 = () => {
+		this.setState({
+			isOpen2: false
+		})
+	}
+
+	open = () => {
+		this.setState({
+			isOpen: true
+		})
+	}
+
+	open2 = () => {
+		this.setState({
+			isOpen2: true
+		})
+	}
+
+	render() {
+		const buttons = [
+				<Button key="b1" onClick={() => alert('cancel')}>Cancel</Button>,
+				<Button key="b2" onClick={() => alert('OK')}>OK</Button>
+			]
+		return [
+			<Button key="a" onClick={this.open}>Show dialog</Button>,
+			<Dialog key="dialog"
+				isOpen={this.state.isOpen}
+				onClose={this.close}
+				title="This is title"
+				spaceClickClosable={true}>
+				Hello, I'm a dialog
+			</Dialog>,
+			<Button key="b" onClick={this.open2}>Show dialog with buttons</Button>,
+			<Dialog key="dialog2"
+				isOpen={this.state.isOpen2}
+				onClose={this.close2}
+				title="This is title"
+				spaceClickClosable={true}
+				buttons={buttons}>
+				Hello, I'm a dialog with buttons
+			</Dialog>
 		]
 	}
 }

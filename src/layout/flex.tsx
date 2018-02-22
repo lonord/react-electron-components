@@ -49,9 +49,22 @@ export function withInlineFlexHorizental<P>(Comp: React.ComponentType<P>) {
 	`
 }
 
-export function withFlexItemsCenter<P>(Comp: React.ComponentType<P>) {
+export function withFlexAlignItemsCenter<P>(Comp: React.ComponentType<P>) {
 	return styled(Comp) `
 		align-items: center;
+	`
+}
+
+export function withFlexJustifyItemsCenter<P>(Comp: React.ComponentType<P>) {
+	return styled(Comp) `
+		justify-content: center;
+	`
+}
+
+export function withFlexAllItemsCenter<P>(Comp: React.ComponentType<P>) {
+	return styled(Comp) `
+		align-items: center;
+		justify-content: center;
 	`
 }
 

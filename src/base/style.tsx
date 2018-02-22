@@ -14,3 +14,9 @@ export function withBoxShadow<P>(Comp: React.ComponentType<P>) {
 		box-shadow: 1px 1px 3px 0px #aaa;
 	`
 }
+
+export function withRadius<P>(Comp: React.ComponentType<P>) {
+	return styled(Comp) `
+		border-radius: 3px;
+	`
+}
