@@ -3,6 +3,7 @@ import * as Icon from 'react-fontawesome'
 import Button from './button/button'
 import IconButton from './button/icon'
 import Dialog, { DialogProps, withDialog } from './dialog/dialog'
+import createPortalDock, { CompItemProps } from './dialog/portal-dock'
 import Modal from './layout/modal'
 import Overlay from './layout/overlay'
 import MenuItem from './menu/item'
@@ -26,7 +27,10 @@ export {
 
 	Dialog,
 	DialogProps,
-	withDialog
+	withDialog,
+
+	createPortalDock,
+	CompItemProps
 }
 
 export * from './layout/flex'
