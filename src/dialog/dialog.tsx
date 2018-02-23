@@ -137,3 +137,55 @@ const ButtonArea: React.SFC<ButtonAreaProps> = (props) => {
 		<ButtonAreaWrap align={props.buttonsAlign}>{props.children}</ButtonAreaWrap>
 	)
 }
+
+export interface DialogTriggerExtraProps {
+	isDialogOpen?: boolean
+	onDialogStatusChange?(isOpen: boolean)
+}
+export interface ClickableProps extends Object {
+	onClick?: (e: any) => void
+}
+interface DialogTriggerState {
+	isDialogOpen: boolean
+}
+export function withDialog<P extends ClickableProps>(DialogComp: React.ComponentType<DialogProps>,
+	TriggerComp: React.ComponentClass<P>) {
+	class DialogTrigger extends React.Component<P & DialogTriggerExtraProps, DialogTriggerState> {
+
+		state = {
+			isDialogOpen: this.props.isDialogOpen || false
+		}
+
+		close = () => {
+			const { onDialogStatusChange } = this.props
+			if (onDialogStatusChange) {
+				onDialogStatusChange(false)
+			} else {
+				this.setState({
+					isDialogOpen: false
+				})
+			}
+		}
+
+		open = () => {
+			const { onDialogStatusChange } = this.props
+			if (onDialogStatusChange) {
+				onDialogStatusChange(true)
+			} else {
+				this.setState({
+					isDialogOpen: true
+				})
+			}
+		}
+
+		render() {
+			const { isDialogOpen, onDialogStatusChange, ...rest } = this.props as any
+			const isOpen = onDialogStatusChange ? isDialogOpen : this.state.isDialogOpen
+			return [
+				<TriggerComp key="trigger" {...rest} onClick={this.open} />,
+				<DialogComp key="dialog" isOpen={isOpen} onClose={this.close}/>
+			]
+		}
+	}
+	return DialogTrigger as React.ComponentClass<P & DialogTriggerExtraProps>
+}

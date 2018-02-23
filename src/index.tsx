@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Icon from 'react-fontawesome'
 import Button from './button/button'
 import IconButton from './button/icon'
-import Dialog, { DialogProps } from './dialog/dialog'
+import Dialog, { DialogProps, withDialog } from './dialog/dialog'
 import Modal from './layout/modal'
 import Overlay from './layout/overlay'
 import MenuItem from './menu/item'
@@ -25,7 +25,8 @@ export {
 	Separate,
 
 	Dialog,
-	DialogProps
+	DialogProps,
+	withDialog
 }
 
 export * from './layout/flex'

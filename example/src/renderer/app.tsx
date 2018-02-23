@@ -3,6 +3,7 @@ import styled, { injectGlobal } from 'styled-components'
 import {
 	Button,
 	Dialog,
+	DialogProps,
 	FlexHorizental,
 	FlexItemAdaptive,
 	FlexItemFix,
@@ -12,6 +13,7 @@ import {
 	Modal,
 	Separate,
 	withBoxShadow,
+	withDialog,
 	withMenu
 } from '../../../src'
 
@@ -174,15 +176,23 @@ class ModalExample extends React.Component<any, ModalExampleState> {
 	}
 }
 
+const MyDialog = (props) => (
+	<Dialog title="Title" {...props}>
+		Hello, It's my dialog
+	</Dialog>
+)
+const DialogTriggerButton = withDialog(MyDialog, Button)
 interface DialogExampleState {
 	isOpen: boolean
 	isOpen2: boolean
+	isOpen3: boolean
 }
 class DialogExample extends React.Component<any, DialogExampleState> {
 
 	state = {
 		isOpen: false,
-		isOpen2: false
+		isOpen2: false,
+		isOpen3: false
 	}
 
 	close = () => {
@@ -209,6 +219,13 @@ class DialogExample extends React.Component<any, DialogExampleState> {
 		})
 	}
 
+	onOpenStatusChange3 = (isOpen: boolean) => {
+		console.log(`onOpenStatusChange3 ${isOpen}`)
+		this.setState({
+			isOpen3: isOpen
+		})
+	}
+
 	render() {
 		const buttons = [
 				<Button key="b1" onClick={() => alert('cancel')}>Cancel</Button>,
@@ -231,7 +248,12 @@ class DialogExample extends React.Component<any, DialogExampleState> {
 				spaceClickClosable={true}
 				buttons={buttons}>
 				Hello, I'm a dialog with buttons
-			</Dialog>
+			</Dialog>,
+			<DialogTriggerButton key="dialogbutton">Dialog button</DialogTriggerButton>,
+			<DialogTriggerButton key="dialogbutton2"
+				isDialogOpen={this.state.isOpen3} onDialogStatusChange={this.onOpenStatusChange3}>
+				Dialog button2
+			</DialogTriggerButton>
 		]
 	}
 }

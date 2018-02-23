@@ -34,7 +34,7 @@ interface MenuTriggerState {
 }
 export type MenuTriggerClass<P> = React.ComponentClass<P>
 export function withMenu<P extends ClickableProps>(menuItemsNode: React.ReactNode,
-	Comp: React.ComponentClass<P>) {
+	Comp: React.ComponentType<P>) {
 	class MenuTrigger extends React.Component<P, MenuTriggerState> {
 
 		state: MenuTriggerState = {
