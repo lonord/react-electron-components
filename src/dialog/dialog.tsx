@@ -84,11 +84,13 @@ export default class Dialog extends React.Component<DialogProps, any> {
 }
 
 const TitleAreaWrap = withFlexHorizental(FlexItemFix.extend`
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f0f0f0;
 `)
 TitleAreaWrap.displayName = 'TitleAreaWrap'
 const TitleAreaTitleWrap = withFlexAlignItemsCenter(withFlexHorizental(styled(FlexItemAdaptive) `
-	padding: 8px;
+	padding: 8px 10px;
+	font-size: 14px;
+	font-weight: bold;
 `))
 TitleAreaTitleWrap.displayName = 'TitleAreaTitleWrap'
 const TitleAreaIcon = withItemFix(styled(IconButton) `
@@ -113,8 +115,9 @@ const TitleArea: React.SFC<TitleAreaProps> = (props) => {
 }
 
 const ContentWrap = FlexItemAdaptive.extend`
-	padding: 8px;
+	padding: 8px 10px;
 	min-height: 50px;
+	font-size: 14px;
 `
 ContentWrap.displayName = 'ContentWrap'
 
@@ -123,8 +126,7 @@ interface ButtonAreaWrapProps extends React.HTMLAttributes<HTMLDivElement> {
 	align?: 'left' | 'center' | 'right'
 }
 const ButtonAreaWrap = styled(ButtonAreaWrapOrigin)`
-	border-top: 1px solid #eee;
-	padding: 8px;
+	padding: 8px 10px;
 	justify-content: ${(props) =>
 		props.align === 'left' ? 'flex-start' : props.align === 'center' ? 'center' : 'flex-end'};
 `

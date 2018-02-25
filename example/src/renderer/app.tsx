@@ -105,7 +105,9 @@ const Modal1 = withBoxShadow(styled(Modal) `
 const MenuButton = withMenu([
 	<MenuItem key="k1">hello</MenuItem>,
 	<Separate key="k2"/>,
-	<MenuItem key="k3">world</MenuItem>
+	<MenuItem key="k3">world</MenuItem>,
+	<Separate key="k4" />,
+	<MenuItem key="k5">你好</MenuItem>
 ], Button)
 
 export default () => (
@@ -236,9 +238,9 @@ class DialogExample extends React.Component<any, DialogExampleState> {
 			<Dialog key="dialog"
 				isOpen={this.state.isOpen}
 				onClose={this.close}
-				title="This is title"
+				title="标题"
 				spaceClickClosable={true}>
-				Hello, I'm a dialog
+				这是一个对话框
 			</Dialog>,
 			<Button key="b" onClick={this.open2}>Show dialog with buttons</Button>,
 			<Dialog key="dialog2"
