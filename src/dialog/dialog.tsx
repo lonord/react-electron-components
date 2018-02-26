@@ -23,6 +23,7 @@ DialogModal.displayName = 'DialogModal'
 
 const DialogWindow = withRadius(withBoxShadow(withFlexVertical(FlexItemFix.extend`
 	min-width: 400px;
+	max-width: 90%;
 	background: white;
 	overflow: hidden;
 `)))

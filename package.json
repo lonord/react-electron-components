@@ -1,6 +1,6 @@
 {
   "name": "@lonord/react-electron-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Base react components for electron platform",
   "main": "lib/",
   "types": "lib/",
