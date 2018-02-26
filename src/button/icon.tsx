@@ -5,13 +5,15 @@ import Button from './button'
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	icon: string
+	spin?: boolean
 }
 
 const IconButton: React.SFC<IconButtonProps> = (props) => {
-	const { icon, children, ...rest } = props
+	const { icon, children, spin, ...rest } = props
 	return (
 		<Button {...rest}>
-			<Fa name={icon} />
+			<Fa name={icon} spin={!!spin} />
+			{children}
 		</Button>
 	)
 }

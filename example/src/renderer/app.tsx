@@ -129,6 +129,7 @@ export default () => (
 		<Section>
 			<IconButton icon="user" />
 			<IconButton1 icon="user" />
+			<IconButton1 icon="spinner" spin={true} />
 			<IconButton2 icon="user" />
 		</Section>
 		<Section>
