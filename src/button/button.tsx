@@ -10,6 +10,6 @@ const Button = BaseButton.extend`
 	background: white;
 	outline: none;
 	text-align: center;
-	cursor: pointer;
+	cursor: ${(p) => p.onClick || p.onClickCapture || p.onDoubleClick || p.onDoubleClickCapture ? 'pointer' : 'default'};
 `
 export default Button
