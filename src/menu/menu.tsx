@@ -8,7 +8,7 @@ export interface MenuModalProps extends ModalProps {
 	left: number
 }
 
-const MenuModal = withBoxShadow(styled(Modal as React.ComponentType<MenuModalProps>) `
+const MenuModal = withBoxShadow(styled(Modal as any as React.ComponentType<MenuModalProps>) `
 	top: ${(props) => props.top ? props.top : 0}px;
 	left: ${(props) => props.left ? props.left : 0}px;
 	position: absolute;
