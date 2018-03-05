@@ -1,6 +1,6 @@
 {
   "name": "@lonord/react-electron-components",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Base react components for electron platform",
   "main": "lib/",
   "types": "lib/",
@@ -21,12 +21,12 @@
   "license": "MIT",
   "dependencies": {
     "@types/react-fontawesome": "^1.6.2",
-    "react-fontawesome": "^1.6.1",
-    "styled-components": "^3.1.6"
+    "react-fontawesome": "^1.6.1"
   },
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "styled-components": "^3.1.6"
   },
   "devDependencies": {
     "@lonord/electron-renderer-ts-compiler": "^1.1.4",
@@ -41,6 +41,7 @@
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1",
     "typescript": "^2.7.2",
-    "typescript-styled-plugin": "^0.6.0"
+    "typescript-styled-plugin": "^0.6.0",
+    "styled-components": "^3.1.6"
   }
 }
