@@ -26,6 +26,7 @@ const DialogWindow = withRadius(withBoxShadow(withFlexVertical(FlexItemFix.exten
 	max-width: 90%;
 	background: white;
 	overflow: hidden;
+	max-height: 100%;
 `)))
 DialogWindow.displayName = 'DialogWindow'
 
@@ -119,6 +120,7 @@ const ContentWrap = FlexItemAdaptive.extend`
 	padding: 8px 10px;
 	min-height: 50px;
 	font-size: 14px;
+	overflow-y: auto;
 `
 ContentWrap.displayName = 'ContentWrap'
 
